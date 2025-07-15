@@ -5,12 +5,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Skeleton } from '../ui/skeleton';
 
-type PersonalProfileProps = {
-  introduction: string;
-  isIntroductionLoading: boolean;
-};
 
-export function HeroSection({ introduction, isIntroductionLoading }: PersonalProfileProps) {
+export function HeroSection() {
   return (
     <section id="hello" className="container py-12 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -32,17 +28,6 @@ export function HeroSection({ introduction, isIntroductionLoading }: PersonalPro
           <h2 className="text-2xl md:text-3xl font-medium text-primary">
             Full-Stack Developer
           </h2>
-          {isIntroductionLoading ? (
-            <div className="space-y-2 max-w-2xl mx-auto md:mx-0">
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-3/4" />
-            </div>
-          ) : (
-            <p className="text-muted-foreground max-w-2xl mx-auto md:mx-0 min-h-[72px]">
-              {introduction}
-            </p>
-          )}
           <div className="flex justify-center md:justify-start flex-wrap gap-4 pt-4">
             <Button asChild size="lg">
               <Link href="#contact">
